@@ -17,6 +17,7 @@ int main(int argc, char *argv[]){
 
     while((fgets(red, sizeof(red), vlez)) != NULL){
         brojac = 0;
+        printf("Red %s so dolzina %d ", red, strlen(red));
         for(int i =0; red[i]!= '\0'; i++){
             if(isupper(red[i])){
                 brojac++;
@@ -27,8 +28,6 @@ int main(int argc, char *argv[]){
             pozicija = ftell(vlez)-strlen(red);
             pomPozicija = ftell(vlez);
         }
-        printf("Dolzina na red %d ", strlen(red));
-        printf("Pozicija %d ", pozicija);
         printf("Pompozicija %d\n", pomPozicija);
     }
     if(maxVred > 0){

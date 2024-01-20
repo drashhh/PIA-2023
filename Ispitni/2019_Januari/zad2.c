@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main(){
-    int dolz,i,j, zname=0;
+    int dolz,i,j, zname=1, brojac=0;
     int A[10][10], B[10][10], C[10][10];
 
     printf("Vnesi ja dolzinata n > ");
@@ -37,8 +37,9 @@ int main(){
 
     for(i=0; i<dolz; i++){
         for(j=0; j<dolz; j++){
-            if(B[i][j] == C[i][j]){
-                zname = 1;
+            if(B[i][j] != C[i][j]){
+                zname = 0;
+                brojac++;
             }
         }
     }
@@ -46,6 +47,9 @@ int main(){
     if(zname){
         printf("Koga se transpozira se dobiva istata niza!\n");
     }
-    else printf("Ne se dobiva istata niza!");
+    else{
+        printf("Ne se dobiva istata niza!\n");
+        printf("Nizata se razlikuva za %d elementi\n", brojac);
+    }
     return 0;
 }
